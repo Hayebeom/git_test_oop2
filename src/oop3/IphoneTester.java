@@ -1,0 +1,37 @@
+package oop3;
+/**
+ * 11
+ * @author HYB
+ *
+ */
+public class IphoneTester {
+	void testIphone(Iphone p) {
+
+		p.applemusic();
+		p.siri();
+		
+		// p에 전달된 객체가 Iphone8 이면 지문인식기능 실행
+
+		// p에 전달된 객체가 IphoneX 라면 얼굴인식기능 실행
+
+		// p에 전달된 객체가 Iphone11 이면 카메라기능 실행
+		
+		if (p instanceof Iphone8) {
+			Iphone8 i8 = (Iphone8) p;	// 
+			/*
+			(Iphone) p <= p가 참조하는 객체에서	 Iphone8 객체를 찾아서 (형변환)
+			그 객체의 주소값을 반환한다
+			*/
+			i8.fingerScan();
+			System.out.println("아이폰8의 지문인식기능 테스트 완료");
+			
+		} else if (p instanceof Iphone11) {
+			((Iphone11)p).tripleCamera();
+			System.out.println("아이폰11의 카메라기능 테스트 완료");
+		} else if (p instanceof IphoneX) {
+			((IphoneX)p).faceScan();
+			System.out.println("아이폰X의 얼굴인식기능 테스트 완료");
+		} 
+		
+	}
+}
